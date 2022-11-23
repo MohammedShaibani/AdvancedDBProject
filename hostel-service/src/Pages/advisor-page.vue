@@ -1,28 +1,24 @@
 <template>
     <div>
       <div class="card-container mx-auto mt-10 mb-10">
-        <h1 class="ml-2 mt-2">Hostel Staff</h1>
+        <h1 class="ml-2 mt-2">Advisor</h1>
         <div class="column-container ml-2">
-            <label class="my-auto">Staff</label>
-            <label class="my-auto">Lease</label>
-            <label class="my-auto">Inspection</label>
+            <label class="my-auto" style="font-weight:bold">Personal Information</label>
+            <router-link to="/myStudents" tag="button">My Students</router-link>
             <label class="my-auto">Logout</label>
-        </div>
-        <div class="column-right ml-2">
-          <hostelStaff/>
+            <AdvisorProfile/>
         </div>
       </div>
     </div>
   </template>
   
   <script>
-// import loginForm from '@/components/login-form.vue';
-  import hostelStaff from '@/Pages/hostel-staff.vue'
+ import AdvisorProfile from '@/components/advisor-profile.vue';
+
   export default {
     components:{
-        // loginForm
-        hostelStaff
-    }
+    AdvisorProfile
+}
   }
   </script>
   
@@ -45,7 +41,7 @@
       display: flex;
       flex-direction: column;
       background-color: #06A77D;
-      width: 40vw;
+      width: 50vw;
       padding: 5px;
       border-radius: 20px;
   }

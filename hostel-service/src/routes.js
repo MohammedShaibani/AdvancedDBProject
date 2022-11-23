@@ -4,6 +4,10 @@ import advisorLogin from "./Pages/advisor-login.vue"
 import hostelLogin from "./Pages/hostel-login.vue"
 
 import HostelPage from "./Pages/hostel-page.vue"
+import studentProfile from "./Pages/student-profile.vue"
+import hostelStaffInfo from "./Pages/hostel-staff-info.vue"
+import advisorPage from "./Pages/advisor-page.vue"
+import advisorPageStudent from "./Pages/advisor-page-student.vue"
 
 export default [
 	{ 
@@ -25,5 +29,27 @@ export default [
     {
         path: "/hostelPage",
         component: HostelPage
+    },
+    {
+        path: "/studentPage",
+        component: studentProfile
+    },
+    {
+        path: "/hostelStaffInfo",
+        component: hostelStaffInfo
+    },
+
+    {
+        path: "/advisorPage",
+        component: advisorPage
+    },
+    {
+        path: "/myStudents",
+        component: advisorPageStudent
+    },
+
+    {
+        path: "/students",
+        component: studentProfile
     },
 ];

@@ -2,12 +2,12 @@
     <div>
     <div class="form-container mx-auto my-5">
         <div class="column-container mx-auto">
-        <label class="my-auto">Staff Name</label>
-        <v-btn class="my-auto mt-5 btn-style" rounded outlined >Information</v-btn>
-        <v-btn class="my-auto mt-5 btn-style" rounded outlined >Remove</v-btn>
+          <label class="my-auto">Staff Name</label>
+          <router-link to="/hostelStaffInfo" tag="button" class="mt-5 text-color px-3">Information</router-link>
+          <v-btn class="my-auto mt-5 btn-style" rounded outlined >Remove</v-btn>
+        </div>
     </div>
   </div>
-    </div>
   </template>
   
   <script>
@@ -22,10 +22,9 @@
   
   <style scoped>
   .column-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: flex-start;
+    display: inline;
+    float: left;
+
     color: #EEF0F2;
 }
   .card-container {
