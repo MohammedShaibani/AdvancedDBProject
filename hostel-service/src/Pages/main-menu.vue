@@ -3,9 +3,8 @@
     <H1 class="pa-10 text-center" >Welcome, what role would you like to access?</H1>
     <div class="option-container mx-auto my-auto">
         <router-link to="/studentLogin">Students</router-link>
-
-        <h3>Advisor Of Studies</h3>
-        <h3>Hostel Staff</h3>
+        <router-link to="/advisorLogin">Advisor Of Studies</router-link>
+        <router-link to="/hostelLogin">Hostel Staff</router-link>
     </div>
   </div>
 </template>
