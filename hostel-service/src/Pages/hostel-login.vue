@@ -1,7 +1,7 @@
 <template>
     <div class="flex-container mx-auto">
         <h1>Hostel Login</h1>
-        <loginForm />
+        <loginForm url="/hostelPage"/>
     </div>
 </template>
 

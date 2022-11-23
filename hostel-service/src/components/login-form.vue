@@ -4,14 +4,16 @@
         <input type="text" class="input-color"/>
         <label class="text-color">Password</label>
         <input type="password" class="input-color"/>
-        <v-btn rounded outlined class="mt-5 text-color">Log In</v-btn>
+        <router-link :to="url" tag="button" class="mt-5 text-color">Log In</router-link>
     </div>
 </template>
 
 <script>
-export default {
-
-}
+    export default {
+        props: {
+            url: String
+        }
+    }
 </script>
 
 <style scoped>

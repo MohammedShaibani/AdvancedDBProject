@@ -1,7 +1,7 @@
 <template>
     <div class="flex-container mx-auto">
         <h1>Student Login</h1>
-        <loginForm />
+        <loginForm url="/studentPage"/>
     </div>
 </template>
 

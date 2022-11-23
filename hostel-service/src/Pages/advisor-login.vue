@@ -1,7 +1,7 @@
 <template>
     <div class="flex-container mx-auto">
         <h1>Advisor Of Studies Login</h1>
-        <loginForm />
+        <loginForm url="/advisorPage"/>
     </div>
 </template>
 
