@@ -1,6 +1,6 @@
 <template>
     <div class="flex-container mx-auto">
-        <StudentInfo />
+        <StudentInfo url="/main-menu"/>
     </div>
 </template>
 

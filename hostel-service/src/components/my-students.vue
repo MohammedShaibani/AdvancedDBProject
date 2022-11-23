@@ -11,7 +11,7 @@
             <input class="input-style my-auto" type="text">
             <label class="my-auto">Comments</label>
             <input class="input-style my-auto py-10" type="text">
-            <v-btn class="my-auto mt-5 btn-style" rounded outlined >Back</v-btn>
+            <router-link :to="url" tag="button" class="my-auto mt-5 text-color">Back</router-link>
         </div>
         <div class="column-container mx-auto">
             <label class="my-auto">Home Address</label>
