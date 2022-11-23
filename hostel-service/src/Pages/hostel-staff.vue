@@ -1,6 +1,12 @@
 <template>
-    <div class="card-container mx-auto mt-10 mb-10">
-      <h1>This is hostel page</h1>
+    <div>
+    <div class="form-container mx-auto my-5">
+        <div class="column-container mx-auto">
+        <label class="my-auto">Staff Name</label>
+        <v-btn class="my-auto mt-5 btn-style" rounded outlined >Information</v-btn>
+        <v-btn class="my-auto mt-5 btn-style" rounded outlined >Remove</v-btn>
+    </div>
+  </div>
     </div>
   </template>
   
@@ -15,6 +21,13 @@
   </script>
   
   <style scoped>
+  .column-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: flex-start;
+    color: #EEF0F2;
+}
   .card-container {
       display: flex;
       flex-direction: column;

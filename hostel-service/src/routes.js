@@ -3,6 +3,8 @@ import studentLogin from "./Pages/student-login.vue"
 import advisorLogin from "./Pages/advisor-login.vue"
 import hostelLogin from "./Pages/hostel-login.vue"
 
+import HostelPage from "./Pages/hostel-page.vue"
+
 export default [
 	{ 
         path: "/",
@@ -19,5 +21,9 @@ export default [
     {
         path: "/hostelLogin",
         component: hostelLogin
-    }
+    },
+    {
+        path: "/hostelPage",
+        component: HostelPage
+    },
 ];
