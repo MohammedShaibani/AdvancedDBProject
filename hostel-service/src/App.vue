@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <v-main class="app-container">
+      <router-view></router-view>
       <login-form></login-form>
       <information-card></information-card>
       <my-students></my-students>

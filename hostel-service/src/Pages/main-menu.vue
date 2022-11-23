@@ -2,9 +2,9 @@
   <div class="flex-container mx-auto my-auto mt-10">
     <H1 class="pa-10 text-center" >Welcome, what role would you like to access?</H1>
     <div class="option-container mx-auto my-auto">
-        <router-link to="/studentLogin">Students</router-link>
-        <router-link to="/advisorLogin">Advisor Of Studies</router-link>
-        <router-link to="/hostelLogin">Hostel Staff</router-link>
+        <router-link class="linkClass" to="/studentLogin">Students</router-link>
+        <router-link class="linkClass" to="/advisorLogin">Advisor Of Studies</router-link>
+        <router-link class="linkClass" to="/hostelLogin">Hostel Staff</router-link>
     </div>
   </div>
 </template>
@@ -37,6 +37,10 @@ export default {
     border-radius: 20px;
     padding: 20px;
     width: 40vw;
+}
+
+.linkClass {
+  color: white;
 }
 
 </style>

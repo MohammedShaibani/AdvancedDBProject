@@ -13,13 +13,20 @@ import hostelLease from "./Pages/hostel-lease.vue"
 import hostelInspection from "./Pages/hostel-inspection.vue"
 import InspectionSchedule from "./Pages/InspectionSchedule.vue"
 
+import studentResidenceInfoVue from "./Pages/student-residence-info.vue";
+import newLeaseVue from "./Pages/new-lease.vue";
+import cancelLeaseVue from "./Pages/cancel-lease.vue";
+import InvoicesPageVue from "./Pages/InvoicesPage.vue";
+import payScreenVue from "./Pages/pay-screen.vue";
+import viewInvoiceVue from "./Pages/view-invoice.vue";
+
 export default [
 	{ 
         path: "/",
         component: mainMenu
     },
     {
-        path: "/studentLogin",
+        path: "/login-student",
         component: studentLogin
     },
     {
@@ -35,7 +42,7 @@ export default [
         component: HostelPage
     },
     {
-        path: "/studentPage",
+        path: "/my-student-profile",
         component: studentProfile
     },
     {
@@ -67,5 +74,29 @@ export default [
     {
         path: "/scheduleInspection",
         component: InspectionSchedule
+    },
+    {
+        path: "/my-residence",
+        component: studentResidenceInfoVue
+    },
+    {
+        path: "/request-new-lease",
+        component: newLeaseVue
+    },
+    {
+        path: "/cancel-lease",
+        component: cancelLeaseVue
+    },
+    {
+        path: "/invoices-info",
+        component: InvoicesPageVue
+    },
+    {
+        path: "/payment",
+        component: payScreenVue
+    },
+    {
+        path: "/invoice-view",
+        component: viewInvoiceVue
     },
 ];
