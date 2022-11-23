@@ -1,16 +1,16 @@
 <template>
     <div class="flex-container mx-auto">
-        <ResidenceInfo />
+        <loginForm />
     </div>
 </template>
 
 <script>
-    import ResidenceInfo from '../components/residence-info.vue';
+    import loginForm from './components/login-form.vue';
 
     export default {
-        components: { ResidenceInfo },
-        name: 'ResidenceInfo Screen',
-        ResidenceInfo,
+        components: { loginForm },
+        name: 'StudentLogin',
+        loginForm,
     };
 </script>
 
