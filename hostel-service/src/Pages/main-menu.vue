@@ -2,7 +2,8 @@
   <div class="flex-container mx-auto my-auto mt-10">
     <H1 class="pa-10 text-center" >Welcome, what role would you like to access?</H1>
     <div class="option-container mx-auto my-auto">
-        <h3>Students</h3>
+        <router-link to="/studentLogin">Students</router-link>
+
         <h3>Advisor Of Studies</h3>
         <h3>Hostel Staff</h3>
     </div>

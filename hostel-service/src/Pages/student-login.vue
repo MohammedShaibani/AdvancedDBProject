@@ -1,11 +1,12 @@
 <template>
     <div class="flex-container mx-auto">
+        <h1>Student Login</h1>
         <loginForm />
     </div>
 </template>
 
 <script>
-    import loginForm from './components/login-form.vue';
+    import loginForm from '@/components/login-form.vue';
 
     export default {
         components: { loginForm },
