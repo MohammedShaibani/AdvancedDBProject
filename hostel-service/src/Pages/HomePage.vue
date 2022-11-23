@@ -1,6 +1,6 @@
 <template>
     <div class="card-container mx-auto mt-10 mb-10">
-      <h1>This is hostel page</h1>
+      <h1>This is home page</h1>
     </div>
   </template>
   
