@@ -9,6 +9,9 @@
       <residence-info />
       <new-lease-vue />
       <cancel-lease-vue />
+      <pay-screen-vue />
+      <view-invoice-vue />
+      <invoices-page />
     </v-main>
   </v-app>
 </template>
@@ -22,9 +25,12 @@ import StudentProfile from './Pages/student-profile.vue';
 import ResidenceInfo from './Pages/student-residence-info.vue';
 import newLeaseVue from './Pages/new-lease.vue';
 import cancelLeaseVue from './Pages/cancel-lease.vue';
+import payScreenVue from './Pages/pay-screen.vue';
+import viewInvoiceVue from './Pages/view-invoice.vue';
+import InvoicesPage from './Pages/InvoicesPage.vue';
 
 export default {
-  components: { loginForm, InformationCard, MyStudents, AdvisorProfile, StudentProfile, ResidenceInfo, newLeaseVue, cancelLeaseVue },
+  components: { loginForm, InformationCard, MyStudents, AdvisorProfile, StudentProfile, ResidenceInfo, newLeaseVue, cancelLeaseVue, payScreenVue, viewInvoiceVue, InvoicesPage },
   name: 'App',
     MyStudents,
 };

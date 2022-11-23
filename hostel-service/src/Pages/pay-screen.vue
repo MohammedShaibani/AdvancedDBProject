@@ -1,16 +1,16 @@
 <template>
     <div class="flex-container mx-auto">
-        <StudentInfo />
+        <PaymentPrompt />
     </div>
 </template>
 
 <script>
-    import StudentInfo from '../components/my-students.vue';
+    import PaymentPrompt from '../components/payment-prompt.vue';
 
     export default {
-        components: { StudentInfo },
+        components: { PaymentPrompt },
         name: 'App',
-        StudentInfo,
+        PaymentPrompt,
     };
 </script>
 

@@ -1,16 +1,16 @@
 <template>
     <div class="flex-container mx-auto">
-        <StudentInfo />
+        <InvoiceTemplate />
     </div>
 </template>
 
 <script>
-    import StudentInfo from '../components/my-students.vue';
+    import InvoiceTemplate from '../components/invoice-template.vue';
 
     export default {
-        components: { StudentInfo },
+        components: { InvoiceTemplate },
         name: 'App',
-        StudentInfo,
+        InvoiceTemplate,
     };
 </script>
 

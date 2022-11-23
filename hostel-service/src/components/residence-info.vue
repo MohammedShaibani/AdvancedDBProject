@@ -52,8 +52,8 @@
                 </div>
 
                 <div class="column-container mx-auto ml-2">
-                    <v-btn class="my-auto btn-style mr-1" rounded outlined >Cancel Lease</v-btn>
-                    <v-btn class="my-auto btn-style ml-1" rounded outlined >Invoices</v-btn>
+                    <v-btn class="my-auto btn-style mb-2" rounded outlined >Cancel Lease</v-btn>
+                    <v-btn class="my-auto btn-style mt-2" rounded outlined >Invoices</v-btn>
                 </div>
             </div>
         </div>
