@@ -9,6 +9,10 @@ import hostelStaffInfo from "./Pages/hostel-staff-info.vue"
 import advisorPage from "./Pages/advisor-page.vue"
 import advisorPageStudent from "./Pages/advisor-page-student.vue"
 
+import hostelLease from "./Pages/hostel-lease.vue"
+import hostelInspection from "./Pages/hostel-inspection.vue"
+import InspectionSchedule from "./Pages/InspectionSchedule.vue"
+
 export default [
 	{ 
         path: "/",
@@ -51,5 +55,17 @@ export default [
     {
         path: "/students",
         component: studentProfile
+    },
+    {
+        path: "/hostelLease",
+        component: hostelLease
+    },
+    {
+        path: "/hostelInspection",
+        component: hostelInspection
+    },
+    {
+        path: "/scheduleInspection",
+        component: InspectionSchedule
     },
 ];

@@ -1,27 +1,29 @@
 <template>
     <div>
       <div class="card-container mx-auto mt-10 mb-10">
-        <h1 class="ml-2 mt-2">Hostel Staff</h1>
+        <h1 class="ml-2 mt-2">Hostel Inspection</h1>
         <div class="column-container ml-2">
-            <label class="my-auto" style="font-weight: bold">Staff</label>
-            <router-link to="/hostelLease" tag="button">Lease</router-link>
-            <router-link to="/hostelInspection" tag="button">Inspection</router-link>
+            <router-link to="/hostelPage" tag="button" class="mt-5 text-color px-3">Staff</router-link>
+            <router-link to="/hostelLease" tag="button" class="mt-5 text-color px-3">Lease</router-link>
+            <label class="my-auto" style="font-weight: bold">Inspection</label>
             <label class="my-auto">Logout</label>
         </div>
-        <div class="column-right ml-2">
-          <hostelStaff/>
+        <div class="column-info mx-auto">
+        <h2>Inspection Reports</h2>
+          <label class="my-auto">Inspection #</label>
+          <router-link to="/hostelStaffInfo" tag="button" class="mt-5 text-color px-3">Information</router-link>
         </div>
+        <router-link to="/scheduleInspection" tag="button" class="mt-5 text-color px-3">Schedule Inspection</router-link>
       </div>
     </div>
   </template>
   
   <script>
 // import loginForm from '@/components/login-form.vue';
-  import hostelStaff from '@/Pages/hostel-staff.vue'
   export default {
     components:{
         // loginForm
-        hostelStaff
+        
     }
   }
   </script>
@@ -32,6 +34,13 @@
     flex-direction: column;
     justify-content: flex-start;
     align-content: flex-start;
+    color: #EEF0F2;
+}
+
+.column-info {
+    display: inline;
+    float: left;
+
     color: #EEF0F2;
 }
 .column-right {
