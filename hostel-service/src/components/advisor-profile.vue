@@ -11,8 +11,8 @@
         <label class="my-auto">Room</label>
         <input class="input-style my-auto" type="text">
         <div class="btn-container mt-5">
-            <v-btn class="my-auto btn-style" outlined >Save</v-btn>
-            <v-btn class="my-auto btn-style" outlined >Update</v-btn>
+            <v-btn class="my-auto btn-style mr-1" rounded outlined >Save</v-btn>
+            <v-btn class="my-auto btn-style ml-1" rounded outlined >Update</v-btn>
         </div>
   </div>
 </template>
