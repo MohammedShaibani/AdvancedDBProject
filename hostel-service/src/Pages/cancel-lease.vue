@@ -1,16 +1,16 @@
 <template>
     <div class="flex-container mx-auto">
-        <StudentInfo />
+        <CancelLease />
     </div>
 </template>
 
 <script>
-    import StudentInfo from '../components/my-students.vue';
+    import CancelLease from '../components/lease-cancellation.vue';
 
     export default {
-        components: { StudentInfo },
-        name: 'App',
-        StudentInfo,
+        components: { CancelLease },
+        name: 'CancelLease page',
+        CancelLease,
     };
 </script>
 

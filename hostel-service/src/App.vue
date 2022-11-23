@@ -7,6 +7,8 @@
       <advisor-profile></advisor-profile>
       <student-profile/>
       <residence-info />
+      <new-lease-vue />
+      <cancel-lease-vue />
     </v-main>
   </v-app>
 </template>
@@ -18,9 +20,11 @@ import loginForm from './components/login-form.vue';
 import MyStudents from './components/my-students.vue';
 import StudentProfile from './Pages/student-profile.vue';
 import ResidenceInfo from './Pages/student-residence-info.vue';
+import newLeaseVue from './Pages/new-lease.vue';
+import cancelLeaseVue from './Pages/cancel-lease.vue';
 
 export default {
-  components: { loginForm, InformationCard, MyStudents, AdvisorProfile, StudentProfile, ResidenceInfo },
+  components: { loginForm, InformationCard, MyStudents, AdvisorProfile, StudentProfile, ResidenceInfo, newLeaseVue, cancelLeaseVue },
   name: 'App',
     MyStudents,
 };

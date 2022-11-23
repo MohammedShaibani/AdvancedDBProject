@@ -1,59 +1,45 @@
 <template>
     <div class="form-container mx-auto my-5">
+        <div class="title-container mx-auto">
+            <p>Lease Request</p>
+        </div>
+        
+        <div class="column-container mx-auto">
+            <label class="my-auto"># Terms</label>
+            <input class="input-style my-auto" type="text">
+        </div>
+        
         <div class="row-container mx-auto">
             <div class="column-container mx-auto mr-2">
-                <label class="my-auto">Hostel Building Name</label>
+                <label class="my-auto">Start Date</label>
                 <input class="input-style my-auto" type="text">
             </div>
 
             <div class="column-container mx-auto ml-2">
-                <label class="my-auto">Telephone #</label>
+                <label class="my-auto">End Date</label>
                 <input class="input-style my-auto" type="text">
             </div>
         </div>
 
-        <div class="column-container mx-auto">
-            <label class="my-auto">Address</label>
-            <input class="input-style my-auto" type="text">
-        </div>
+        
 
-        <div class="title-container mx-auto">
-            <p>Lease Information</p>
-        </div>
+        
 
         <div class="column-container mx-auto">
             <div class="row-container mx-auto">
-                <div class="column-container mx-auto mr-2">
-                    <label class="my-auto"># Terms</label>
-                    <input class="input-style my-auto" type="text">
-                </div>
-
                 <div class="column-container mx-auto ml-2">
-                    <label class="my-auto">Place #</label>
+                    <label class="my-auto">Accomodation Details</label>
                     <input class="input-style my-auto" type="text">
                 </div>
             </div>
 
             <div class="row-container mx-auto">
                 <div class="column-container mx-auto mr-2">
-                    <label class="my-auto">Start Date</label>
-                    <input class="input-style my-auto" type="text">
+                    <v-btn class="my-auto btn-style mr-1" rounded outlined >Request Lease</v-btn>
                 </div>
 
                 <div class="column-container mx-auto ml-2">
-                    <label class="my-auto">End Date</label>
-                    <input class="input-style my-auto" type="text">
-                </div>
-            </div>
-
-            <div class="row-container mx-auto">
-                <div class="column-container mx-auto mr-2">
-                    <v-btn class="my-auto btn-style mr-1" rounded outlined >Request New Lease</v-btn>
-                </div>
-
-                <div class="column-container mx-auto ml-2">
-                    <v-btn class="my-auto btn-style mr-1" rounded outlined >Cancel Lease</v-btn>
-                    <v-btn class="my-auto btn-style ml-1" rounded outlined >Invoices</v-btn>
+                    <v-btn class="my-auto btn-style mr-1" rounded outlined >Cancel</v-btn>
                 </div>
             </div>
         </div>

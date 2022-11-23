@@ -1,16 +1,16 @@
 <template>
     <div class="flex-container mx-auto">
-        <StudentInfo />
+        <RequestNewLease />
     </div>
 </template>
 
 <script>
-    import StudentInfo from '../components/my-students.vue';
+    import RequestNewLease from '../components/request-new-lease-card.vue';
 
     export default {
-        components: { StudentInfo },
-        name: 'App',
-        StudentInfo,
+        components: { RequestNewLease },
+        name: 'RequestNewLeaseForm',
+        RequestNewLease,
     };
 </script>
 
