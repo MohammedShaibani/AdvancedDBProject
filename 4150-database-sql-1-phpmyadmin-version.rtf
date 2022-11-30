@@ -1,0 +1,183 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2706
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww12600\viewh20480\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 -- Table 1\
+CREATE TABLE Advisors	(\
+    advisor_id	INT(9)	NOT NULL,\
+    advisor_firstname   VARCHAR(25)	NOT NULL,\
+    advisor_lastname   VARCHAR(25)	NOT NULL,\
+    advisor_position    VARCHAR(50)	NOT NULL,\
+    advisor_dept    VARCHAR(50)	NOT NULL,\
+    internal_telnum  NUMBER(17)	NOT NULL,\
+    office_building VARCHAR(50)	NOT NULL,\
+    office_room_num    INT(4)	NOT NULL,\
+    PRIMARY KEY(advisor_id)\
+);\
+\
+-- Insert statements\
+INSERT INTO	Advisors	VALUES (105677832, 'Arthur', 'Wick','Vice-President', 'School of Business', 51922734802346, 'Eulette Center of Business Research', 1477);\
+INSERT INTO	Advisors VALUES (103221190, 'Beth', 'Wexler', 'President of Computer Science','School of Computer Science', 22667890452234, 'Harv Center of Computer Science', 2231);\
+\
+-- Table 2\
+CREATE Table Rooms    (\
+    room_id INT(8) NOT NULL,\
+    place_name   VARCHAR(60)	NOT NULL,\
+    room_num    INT(3) NOT NULL,\
+    rent_rate   decimal(6,2) NOT NULL,\
+    available   char(1) NOT NULL,\
+    PRIMARY KEY(room_id)\
+);\
+\
+-- Insert statements\
+INSERT INTO	Rooms	VALUES (11, 'MacDonald Hall', 154, 2435.50, 'Y');\
+INSERT INTO Rooms	VALUES (12, 'Laurier Hall', 234, 2325.70, 'N');\
+\
+\
+-- Table 3\
+CREATE TABLE  Students    (\
+    grade12_num  INT(9)	NOT NULL,\
+    first_name  VARCHAR(25) NOT NULL,\
+    last_name  VARCHAR(25) NOT NULL,\
+    home_address   VARCHAR(90) NOT NULL,\
+    dob DATE NOT NULL,\
+    gender  VARCHAR(15) NOT NULL,\
+    ctgry  VARCHAR(15)	NOT NULL CHECK (ctgry LIKE '%Undergraduate%' OR ctgry LIKE '%Postgraduate%'),\
+    nationality VARCHAR(50) NOT NULL,\
+    spec_needs VARCHAR(100),\
+    comments VARCHAR(500),\
+    current_status   VARCHAR(20) NOT NULL CHECK (current_status = 'placed' OR current_status = 'waiting'),\
+    room_id	INT(8),\
+    current_sem  INT(2) NOT NULL,\
+    course  VARCHAR(80) NOT NULL,\
+    advisor_id	INT(9)	NOT NULL,\
+    PRIMARY KEY(grade12_num),\
+    FOREIGN KEY(advisor_id) REFERENCES	Advisors(advisor_id),\
+    FOREIGN KEY(room_id) REFERENCES Rooms(room_id)\
+);\
+\
+-- Insert statements\
+INSERT INTO	Students	VALUES (103267501, 'John', 'Smith', '3564 Mulford Ct, Windsor, ON N9C 1W7', '2000-01-23', 'Male', 'Postgraduate', 'American', null, null, 'placed', 11, 1, 'Master of Business Administration', 105677832);\
+INSERT INTO	Students	VALUES (104345709, 'Cettina', 'Esposito', '330 Rankin Ave, Windsor, ON N9B 2R7', '2000-12-02', 'Female', 'Undergraduate', 'Italian', null, 'International student', 'waiting', null, 1, 'BSc (Honours) in Physics', 103221190);\
+\
+\
+-- Table 4\
+CREATE TABLE	Academic_History    (\
+    grade12_num INT(9)	NOT NULL,\
+    semester    VARCHAR(20),\
+    semester_avg decimal(6,3)	NOT NULL,\
+    major_avg   decimal(6,3)	NOT NULL,\
+    cumul_avg   decimal(6,3)	NOT NULL,\
+    comments	VARCHAR(500),\
+    PRIMARY KEY(grade12_num),\
+    FOREIGN KEY(grade12_num)    REFERENCES  Students(grade12_num)\
+);\
+\
+-- Insert statements\
+INSERT INTO	Academic_History	VALUES (103267501, 'Fall 2022', 88.255, 78.951, 76.468, null);\
+INSERT INTO	Academic_History	VALUES (104345709, 'Winter 2023', 74.785, 78.144, 76.631, 'Good standing, improved');\
+\
+\
+-- Table 5\
+CREATE TABLE	Halls    (\
+    hall_name   VARCHAR(60)	NOT NULL,\
+    address   VARCHAR(90)	UNIQUE NOT NULL,\
+    tel_INT  NUMBER(17)	UNIQUE NOT NULL,\
+    num_bedrooms    INT(3)	NOT NULL,\
+    PRIMARY KEY(hall_name)\
+);\
+\
+-- Insert statements\
+INSERT INTO	Halls	VALUES ('MacDonald Hall', '401 Sunset Ave, Windsor, ON N9B 3P4', 17053302710,450);\
+INSERT INTO Halls VALUES ('Laurier Hall', 'Wyandotte St W, Windsor, ON N9C 2J9', 17054563421, 506);\
+\
+\
+-- Table 6\
+CREATE TABLE	Flats	(\
+    flat_name    VARCHAR(60)	NOT NULL,\
+    address   VARCHAR(90)	UNIQUE NOT NULL,\
+    tel_INT  NUMBER(17)	UNIQUE NOT NULL,\
+    num_bedrooms    INT(3)	NOT NULL,\
+    PRIMARY KEY(flat_name)\
+);\
+\
+-- Insert statements\
+INSERT INTO	Flats	VALUES (0001, '275 Askin Ave, Windsor, ON N9B 3R5', 17054563589, 85);\
+INSERT INTO	Flats	VALUES (0002, '567 Donnelly St, Windsor, ON N9C 1M2', 17054568395, 105);\
+\
+\
+-- Table 7\
+CREATE Table Leases    (\
+    lease_num   INT(12)	NOT NULL,\
+    num_semesters   INT(1)	NOT NULL CHECK (num_semesters BETWEEN 1 AND 3),\
+    room_id   INT(8)	NOT NULL,\
+    start_date  DATE	NOT NULL,\
+    end_date    DATE	NOT NULL,\
+    PRIMARY KEY(lease_num),\
+    FOREIGN KEY(room_id) REFERENCES Rooms(room_id),\
+    CONSTRAINT	chk_length	CHECK (start_date < end_date)\
+);\
+\
+-- Insert statements\
+INSERT INTO Leases	VALUES (2013045681, 2, 11, '2022-04-30', '2022-08-25');\
+INSERT INTO Leases	VALUES (2048261893, 1, 12, '2022-04-30', '2022-12-27');\
+\
+\
+-- Table 8\
+CREATE TABLE	Invoices    (\
+    invoice_num INT(12)	NOT NULL,\
+    lease_num   INT(12)	NOT NULL,\
+    semester	VARCHAR(20)	NOT NULL,\
+    payment_due	DECIMAL(6,2)	NOT NULL,\
+    payment_deadline	DATE	NOT NULL,\
+    paid_date   DATE	,\
+    amount_paid	DECIMAL(6,2),\
+    pay_method  VARCHAR(10) CHECK (pay_method IN ('Cheque', 'Visa', 'Mastercard', 'Cash')),\
+    reminder1_date  DATE	NOT NULL,\
+    reminder2_date  DATE	NOT NULL,\
+    PRIMARY KEY(invoice_num),\
+    FOREIGN KEY(lease_num)	REFERENCES	Leases(lease_num)\
+);\
+\
+--	Insert statements\
+INSERT INTO	Invoices	VALUES (12271123, 2013045681, 'Fall 2022', 2435.50, '2022-09-30', '2022-09-30', 1000.00, 'Visa', '2022-09-15', '2022-09-25');\
+INSERT INTO	Invoices	VALUES (15830211, 2048261893, 'Fall 2022', 3871.00, '2022-10-31', '2022-10-15', 3871.00, 'Cheque', '2022-10-15', '2022-10-25');\
+\
+-- Table 9\
+CREATE TABLE	Hostel_Staff    (\
+    staff_num INT(9)	NOT NULL,\
+    first_name  VARCHAR(25)	NOT NULL,\
+    last_name  VARCHAR(25)	NOT NULL,\
+    home_address  VARCHAR(90)	NOT NULL,\
+    dob DATE	NOT NULL,\
+    gender  VARCHAR(15)	NOT NULL,\
+    hostel_position  VARCHAR(50) 	NOT NULL,\
+    pos_location  VARCHAR(50) 	NOT NULL,\
+    PRIMARY KEY(staff_num)\
+);\
+\
+-- Insert statements\
+INSERT INTO	Hostel_Staff 	VALUES (123405670, 'Michael', 'Rose', 'Rivera St, Windsor, ON N9G 1J0', '1980-03-13', 'Male',  'Inspector', 'Toll Building');\
+INSERT INTO	Hostel_Staff 	VALUES (127462701, 'Amira', 'Kent', 'Grand Hanst St, Windsor, ON N4G 7K0', '1975-10-31', 'Female',  'Manager', 'Plarn Building');\
+\
+-- Table 10\
+CREATE TABLE	Inspections    (\
+    inspection_num	INT(12)	NOT NULL,\
+    inspector_firstname    VARCHAR(25)	NOT NULL,\
+    inspector_lastname    VARCHAR(25)	NOT NULL,\
+    inspector_id	INT(9)	NOT NULL,\
+    room_id INT(8) NOT NULL,\
+    inspect_date    DATE	NOT NULL,\
+    satisfactory   VARCHAR(25)	NOT NULL CHECK (satisfactory = 'yes' OR satisfactory = 'no'),\
+    comments    VARCHAR(500),\
+    PRIMARY KEY(inspection_num),\
+    FOREIGN KEY(inspector_id)    REFERENCES  Hostel_Staff(staff_num),\
+    FOREIGN KEY(room_id) REFERENCES Rooms(room_id)\
+);\
+\
+-- Insert statements\
+INSERT INTO	Inspections	VALUES (143, 'Michael', 'Rose', 123405670, 11, '2022-09-15', 'yes', null);\
+INSERT INTO	Inspections	VALUES (167, 'Amira', 'Kent', 127462701, 12, '2022-09-15', 'no', 'Students destroyed the doors.');}
